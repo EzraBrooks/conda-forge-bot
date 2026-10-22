@@ -636,6 +636,7 @@ def _render_recipe_yaml(
 
             if "target_platform" in cbc:
                 val = cbc["target_platform"][0]
+                del cbc["target_platform"]
 
             if platform_arch is None:
                 platform_arch = val
