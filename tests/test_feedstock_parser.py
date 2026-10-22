@@ -162,12 +162,6 @@ def test_feedstock_parser_load_feedstock_local_clangdev():
         {},
     )
     assert attrs["feedstock_name"] == "clangdev"
-    # assert attrs["version"] == attrs["meta_yaml"]["outputs"][0]["version"]
-    # assert attrs["name"] == attrs["meta_yaml"]["outputs"][0]["name"]
-    # assert attrs["name"] == "fenics-basix"
-    # assert attrs["parsing_error"] is False
-    # assert isinstance(attrs["ci_support_migrations"], dict)
-    # assert any(fname.startswith("python") for fname in attrs["ci_support_migrations"])
-    # for k, v in attrs["ci_support_migrations"].items():
-    #     assert any(kk == "migrator_ts" for kk in v)
-    #     assert any(kk == "migration_number" for kk in v)
+    assert attrs["version"] == attrs["meta_yaml"]["outputs"][0]["version"]
+    assert attrs["parsing_error"] is False
+    assert isinstance(attrs["ci_support_migrations"], dict)
