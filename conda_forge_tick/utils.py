@@ -638,8 +638,8 @@ def _render_recipe_yaml(
                 val = cbc["target_platform"][0]
                 del cbc["target_platform"]
 
-            if platform_arch is None:
-                platform_arch = val
+                if platform_arch is None:
+                    platform_arch = val
 
             cbc_str = yaml_safe_dumps(cbc)
             with open(_cbc_path, "w") as fp:
