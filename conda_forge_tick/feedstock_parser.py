@@ -363,6 +363,10 @@ def populate_feedstock_attributes(
 
     if feedstock_dir is not None:
         logger.debug(
+            "ci support files: %r",
+            list(feedstock_dir.joinpath(".ci_support").glob("*.yaml")),
+        )
+        logger.debug(
             "# of ci support files: %s",
             len(list(feedstock_dir.joinpath(".ci_support").glob("*.yaml"))),
         )
@@ -746,7 +750,7 @@ def load_feedstock_local(
                     "Either `meta.yaml` or `recipe.yaml` need to be present in the feedstock"
                 )
 
-        if conda_forge_yaml is None:
+        if conda_forge_yaml is None and not isinstance(feedstock_dir, Response):
             conda_forge_yaml_path = Path(feedstock_dir).joinpath("conda-forge.yml")
             if conda_forge_yaml_path.exists():
                 conda_forge_yaml = conda_forge_yaml_path.read_text()
