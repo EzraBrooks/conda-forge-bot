@@ -490,7 +490,9 @@ def populate_feedstock_attributes(
         else:
             logger.debug("doing generic parsing")
             plat_archs = [("win", "64"), ("osx", "64"), ("linux", "64")]
-            for k in set(node_attrs["conda-forge.yml"].get("provider", {})):
+            for k in set(
+                (node_attrs.get("conda-forge.yml", {}) or {}).get("provider", {}) or {}
+            ):
                 if "_" in k:
                     plat_archs.append(tuple(k.split("_")))
             if isinstance(meta_yaml, str):
@@ -791,7 +793,9 @@ def load_feedstock_local(
             recipe_yaml=recipe_yaml,
             conda_forge_yaml=conda_forge_yaml,
             mark_not_archived=mark_not_archived,
-            feedstock_dir=feedstock_dir,
+            feedstock_dir=None
+            if isinstance(feedstock_dir, Response)
+            else feedstock_dir,
             use_container=False,
         )
 
