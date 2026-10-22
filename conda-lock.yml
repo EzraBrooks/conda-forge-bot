@@ -13,7 +13,7 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 36f749966fbcba1438c01a2c6f6079e61fa74cae69c6209afd22034cbaf524e2
+    linux-64: 730159dd860f986a1df15990e4955051df9ef1f3a37d9e58daa89d826d17d0f7
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -4372,19 +4372,19 @@ package:
   category: main
   optional: false
 - name: rattler-build
-  version: 0.75.0
+  version: 0.77.0
   manager: conda
   platform: linux-64
   dependencies:
     patchelf: ''
-    __glibc: '>=2.17,<3.0.a0'
     libstdcxx: '>=15'
     libgcc: '>=15'
-    openssl: '>=3.5.8,<4.0a0'
-  url: https://conda.anaconda.org/conda-forge/linux-64/rattler-build-0.75.0-hf01adef_0.conda
+    __glibc: '>=2.17,<3.0.a0'
+    openssl: '>=3.5.9,<4.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/rattler-build-0.77.0-hf01adef_1.conda
   hash:
-    md5: 21ddb2e506f2c6c6645108e8b7d29fd3
-    sha256: 304df89e62a43f0c303b199da73b7f0f80d279bbe6995579abe892f6eea116a9
+    md5: 1b82a8513a170c17d1eaea225ea79420
+    sha256: 7bcadeeda659a37783003d43a157252c23826d6e81e1df9c0777cb61f9996f39
   category: main
   optional: false
 - name: rattler-build-conda-compat
@@ -5073,16 +5073,16 @@ package:
   category: main
   optional: false
 - name: tzlocal
-  version: 5.4.4
+  version: 5.4.5
   manager: conda
   platform: linux-64
   dependencies:
     python: ''
     __unix: ''
-  url: https://conda.anaconda.org/conda-forge/noarch/tzlocal-5.4.4-pyh8f84b5b_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/tzlocal-5.4.5-pyhfa0c392_0.conda
   hash:
-    md5: cbd15812c946aecc2d9479318aca450f
-    sha256: 5d693f6f22b584fb69bac52e716872a1432c50527ced54d66064cc27e5946c0b
+    md5: 0ef97db8bef5d3ddd614170d78d46fd9
+    sha256: bbffdc66892e25d4ada9a124eb369ab10f249c0c2f03ca10d2e2a45516a7118f
   category: main
   optional: false
 - name: ukkonen

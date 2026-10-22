@@ -641,10 +641,16 @@ def _render_recipe_yaml(
         # and arch migrations.
         prepared_text = flatten_staging_inheritance(stubbed_text)
 
-        res = subprocess.run(
+        cmd = (
             ["rattler-build", "build", "--render-only"]
             + variant_config_flags
-            + target_platform_flags,
+            + target_platform_flags
+        )
+
+        logger.debug("parsing recipe.yaml file with command: %r", cmd)
+
+        res = subprocess.run(
+            cmd,
             capture_output=True,
             text=True,
             input=prepared_text,
