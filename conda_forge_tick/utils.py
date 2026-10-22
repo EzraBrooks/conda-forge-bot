@@ -618,21 +618,43 @@ def _render_recipe_yaml(
         If no output recipes are found.
     """
     with tempfile.TemporaryDirectory() as tmpdir:
-        if cbc_path is not None and not os.path.exists(str(cbc_path)):
-            _cbc_path = os.path.join(tmpdir, "conda_build_config.yaml")
-            with open(_cbc_path, "w") as fp:
-                fp.write(str(cbc_path))
+        variant_config_flags = []
 
-            variant_config_flags = ["--variant-config", _cbc_path]
+        if cbc_path is not None:
+            _cbc_path = os.path.join(tmpdir, "conda_build_config.yaml")
+            if not os.path.exists(str(cbc_path)):
+                with open(_cbc_path, "w") as fp:
+                    fp.write(str(cbc_path))
+            else:
+                with open(str(cbc_path)) as fpread:
+                    with open(_cbc_path, "w") as fpwrite:
+                        fpwrite.write(fpread.read())
+
+            variant_config_flags += ["--variant-config", _cbc_path]
+            with open(_cbc_path) as fp:
+                cbc = yaml_safe_load(fp)
+
+            if "target_platform" in cbc:
+                val = cbc["target_platform"][0]
+
+            if platform_arch is None:
+                platform_arch = val
+
+            cbc_str = yaml_safe_dumps(cbc)
+            with open(_cbc_path, "w") as fp:
+                fp.write(cbc_str)
+            logger.debug("parsing recipe.yaml file with variant config:\n%s", cbc_str)
         else:
-            variant_config_flags = (
-                [] if cbc_path is None else ["--variant-config", str(cbc_path)]
+            logger.debug("parsing recipe.yaml file without a variant config file")
+
+        if platform_arch is None or platform_arch == "noarch":
+            logger.debug("parsing recipe.yaml file without a target platform")
+            target_platform_flags = []
+        else:
+            logger.debug(
+                "parsing recipe.yaml file with target platform: %s", platform_arch
             )
-        target_platform_flags = (
-            []
-            if platform_arch is None or platform_arch == "noarch"
-            else ["--target-platform", platform_arch]
-        )
+            target_platform_flags = ["--target-platform", platform_arch]
 
         stubbed_text = replace_compiler_with_stub(text)
         # rattler-build --render-only drops staging outputs and does not
