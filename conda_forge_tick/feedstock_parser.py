@@ -32,6 +32,7 @@ from conda_forge_tick.settings import (
     settings,
 )
 from conda_forge_tick.utils import (
+    CONDA_BUILD_SPECIAL_KEYS,
     as_iterable,
     get_keys_default,
     get_platform_arch_from_ci_support_filename,
@@ -272,12 +273,13 @@ def _clean_req_nones(reqs):
 
 
 def _extract_default_key_values(ci_support_files):
+    excluded_keys = list(CONDA_BUILD_SPECIAL_KEYS) + ["target_platform"]
     cbc = {}
     for ci_support_file in ci_support_files:
         with open(ci_support_file) as fp:
             _cbc = yaml_safe_load(fp)
             for k, v in _cbc.items():
-                if k not in cbc:
+                if k not in cbc and k not in excluded_keys:
                     cbc[k] = v
 
     return cbc

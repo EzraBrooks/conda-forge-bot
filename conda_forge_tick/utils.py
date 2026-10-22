@@ -125,6 +125,14 @@ DEFAULT_GRAPH_FILENAME = "graph.json"
 
 DEFAULT_CONTAINER_TMPFS_SIZE_MB = 6000
 
+CONDA_BUILD_SPECIAL_KEYS = (
+    "pin_run_as_build",
+    "ignore_version",
+    "ignore_build_only_deps",
+    "extend_keys",
+    "zip_keys",
+)
+
 
 def parse_munged_run_export(p: str | dict) -> dict:
     from urllib.parse import unquote_plus
