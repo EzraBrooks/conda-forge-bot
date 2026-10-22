@@ -6,6 +6,8 @@ platforms:
 dependencies:
   - backoff
   - bcrypt
+  - certifi >=2026.10.19
+  - ca-certificates >=2026.10.19
   - cachecontrol
   - cachetools
   - click
@@ -34,6 +36,8 @@ dependencies:
   - networkx >=2.8.6
   - orjson
   - packaging
+  - pip >=26.2.2
+  - pixi >=0.82.1
   - psutil
   - py-rattler>=0.22.0,<0.26.0a0
   - pydantic >=2.13
