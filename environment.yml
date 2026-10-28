@@ -62,7 +62,7 @@ dependencies:
   - wget
   - wurlitzer
   # build
-  - python=3.12
+  - python=3.14
   - pip
   - python-build
   - setuptools_scm >=8
