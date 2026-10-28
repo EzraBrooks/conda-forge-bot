@@ -331,7 +331,7 @@ package:
   category: main
   optional: false
 - name: botocore
-  version: 1.43.118
+  version: 1.43.119
   manager: conda
   platform: linux-64
   dependencies:
@@ -339,10 +339,10 @@ package:
     python: '>=3.10'
     python-dateutil: '>=2.1,<3.0.0'
     urllib3: '>=1.25.4,!=2.2.0,<3'
-  url: https://conda.anaconda.org/conda-forge/noarch/botocore-1.43.118-pyhd8ed1ab_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/botocore-1.43.119-pyhd8ed1ab_0.conda
   hash:
-    md5: a08d5361ed0ef246e4d61a22673322c3
-    sha256: acedb861b2e32b3ca747649308c2100e9cd6b17b367e7fd41414e0b9cd10c3d6
+    md5: 83162bc73dfdf5a72debeaafc65253b1
+    sha256: cf255535eff361d72ceb50dad6380461d09cd608470c33b172682290b099287e
   category: main
   optional: false
 - name: brotli-python
@@ -769,14 +769,14 @@ package:
   category: main
   optional: false
 - name: conda-forge-pinning
-  version: 2026.10.27.07.30.40
+  version: 2026.10.28.04.53.51
   manager: conda
   platform: linux-64
   dependencies: {}
-  url: https://conda.anaconda.org/conda-forge/noarch/conda-forge-pinning-2026.10.27.07.30.40-hd8ed1ab_1.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/conda-forge-pinning-2026.10.28.04.53.51-hd8ed1ab_1.conda
   hash:
-    md5: e4da66a66781800e0513836005ec66ab
-    sha256: b8c4438d1c01e633ec34b551e371fb8cb41ed4d174f29ecf3e46968913f69fd7
+    md5: 5bcb3ccc49d3ac16ec16fcedcf4620d3
+    sha256: 0f7bd882e8db9e67ad41f80b484bb0c371fc7bc7b65b9b71bed740551c7d19dd
   category: main
   optional: false
 - name: conda-index
@@ -1017,7 +1017,7 @@ package:
     jsonschema: ''
     libarchive: ''
     license-expression: ''
-    py-rattler: '>=0.22.0,<0.28.0a0'
+    py-rattler: '>=0.22.0,<0.29.0a0'
     pycryptodome: ''
     pygit2: ''
     pygithub: '>=2,<3'
@@ -1032,10 +1032,10 @@ package:
     tomli: '>=1.0.0'
     toolz: ''
     vsts-python-api: ''
-  url: https://conda.anaconda.org/conda-forge/noarch/conda-smithy-2026.10.24-unix_pyh707e725_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/conda-smithy-2026.10.24-unix_pyh707e725_1.conda
   hash:
-    md5: 0901af17eff7141b843c644ccc7e3442
-    sha256: da86448ddd620ca48e73132b8b9f5c135a1fab79bea69e87950ca9153dae25e0
+    md5: ca1668775d14ae9455e614f204f92b65
+    sha256: 062c763e47791252ab78adc9883eda12bbbe78142d0116864cdb5d3715494d79
   category: main
   optional: false
 - name: conda-souschef
@@ -2671,16 +2671,16 @@ package:
   category: main
   optional: false
 - name: libjpeg-turbo
-  version: 3.2.0
+  version: 3.2.1
   manager: conda
   platform: linux-64
   dependencies:
     __glibc: '>=2.17,<3.0.a0'
-    libgcc: '>=14'
-  url: https://conda.anaconda.org/conda-forge/linux-64/libjpeg-turbo-3.2.0-hb03c661_1.conda
+    libgcc: '>=15'
+  url: https://conda.anaconda.org/conda-forge/linux-64/libjpeg-turbo-3.2.1-h7cc23a3_0.conda
   hash:
-    md5: 898d1c9793eaa52efc4727bd84d2e39a
-    sha256: bba8538e6538ed58a8479b332337b96986561f975d06cfa2039a016c2d246ee4
+    md5: 5fd2b2218f7c28c71e95738a4fffaf78
+    sha256: 2f7d092a3212884825c43814575225fde8a9190611bc0e38c55e0dae45e329ac
   category: main
   optional: false
 - name: liblapack
@@ -3313,10 +3313,10 @@ package:
     libgcc: '>=15'
     python: ''
     python_abi: 3.12.*
-  url: https://conda.anaconda.org/conda-forge/linux-64/markupsafe-3.0.4-py312h8b7ec3f_2.conda
+  url: https://conda.anaconda.org/conda-forge/linux-64/markupsafe-3.0.4-py312h8b7ec3f_3.conda
   hash:
-    md5: 80d430787f77708ec725ddbced1469a6
-    sha256: 02211f28277082b044a5530a44563a4c44d88586c68d072dca0cb52c69f7bb8b
+    md5: b290eee2e186496939673d76480cf479
+    sha256: 92e976f5c0e4c1656c91af836ab71849f46097791f683f9ce7aa085a29f008ff
   category: main
   optional: false
 - name: mbedtls
@@ -4112,22 +4112,21 @@ package:
   category: main
   optional: false
 - name: pytest
-  version: 9.1.1
+  version: 9.2.0
   manager: conda
   platform: linux-64
   dependencies:
-    colorama: ''
     exceptiongroup: '>=1'
-    iniconfig: '>=1.0.1'
-    packaging: '>=22'
-    pluggy: '>=1.5,<2'
-    pygments: '>=2.7.2'
+    iniconfig: '>=2'
+    packaging: '>=24'
+    pluggy: '>=1.6,<2'
+    pygments: '>=2.15'
     python: '>=3.10'
-    tomli: '>=1'
-  url: https://conda.anaconda.org/conda-forge/noarch/pytest-9.1.1-pyhc364b38_2.conda
+    tomli: '>=2'
+  url: https://conda.anaconda.org/conda-forge/noarch/pytest-9.2.0-pyhc364b38_0.conda
   hash:
-    md5: 64c98a12c4e23eb238bf66bbecafdf3c
-    sha256: 430051d80765207a7d782b2b188230ba1489d35c6e75fd9903f76cb9fda4af16
+    md5: bf463a625eeca81d2abfa2d0addcc270
+    sha256: eb41d804a100ed7ccc0b1abd48a72ece54e8bdeba2af15adf17c524699281454
   category: main
   optional: false
 - name: pytest-cov
@@ -4146,17 +4145,17 @@ package:
   category: main
   optional: false
 - name: pytest-env
-  version: 1.8.1
+  version: 1.8.3
   manager: conda
   platform: linux-64
   dependencies:
     pytest: '>=9.1.1'
     python: '>=3.11'
     python-dotenv: '>=1.2.4'
-  url: https://conda.anaconda.org/conda-forge/noarch/pytest-env-1.8.1-pyhd8ed1ab_0.conda
+  url: https://conda.anaconda.org/conda-forge/noarch/pytest-env-1.8.3-pyhd8ed1ab_0.conda
   hash:
-    md5: cbf81f2246300fd1072f14b8eda16b6f
-    sha256: 8c0afd307a5b9de6e38a9565d60cd62ed396c13eeda65b8685606d42d97273f7
+    md5: da59e190aeba1153c6791131724d0326
+    sha256: 9112b53a823ef31b55859880f93e8845ae9eb62c23ba0d4a009d70c1c5e7340c
   category: main
   optional: false
 - name: pytest-retry
@@ -4799,17 +4798,17 @@ package:
   category: main
   optional: false
 - name: simdjson
-  version: 5.0.5
+  version: 5.0.6
   manager: conda
   platform: linux-64
   dependencies:
     __glibc: '>=2.17,<3.0.a0'
     libgcc: '>=15'
     libstdcxx: '>=15'
-  url: https://conda.anaconda.org/conda-forge/linux-64/simdjson-5.0.5-h4dbf13b_0.conda
+  url: https://conda.anaconda.org/conda-forge/linux-64/simdjson-5.0.6-h4dbf13b_0.conda
   hash:
-    md5: c2297d5bc118e70773153ed6fd2b310c
-    sha256: 7c1d22517e62695708aadf088272c6194635d8b1998869f0e9bf95ac01543f26
+    md5: 2a62a581da89a4b12231e62eb7e153d4
+    sha256: af620adeb886b8e2d61100faeb7c4085b48171559fb36ee793ea7b8a0d1f8743
   category: main
   optional: false
 - name: six
